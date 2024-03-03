@@ -35,6 +35,8 @@ const AppWrapper = ({ children }: { children: React.ReactNode }) => {
       const vistor_id = window.localStorage.getItem("vistor_id");
       if (theme === "dark") {
         setMetaData((prev) => ({ ...prev, theme: "dark" }));
+      } else if (theme === "light"){
+        setMetaData((prev) => ({ ...prev, theme: "light" }));
       }
       if (vistor_id) {
         setMetaData((prev) => ({ ...prev, vistor_id }));

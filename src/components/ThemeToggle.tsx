@@ -18,14 +18,15 @@ const ThemeToggle = () => {
   };
 
   useEffect(() => {
+    console.log(metaData.theme);
     if (metaData.theme === "dark") {
       document.documentElement.classList.add("dark");
-    } else if (metaData.theme === "light") {
-      document.documentElement.classList.remove("dark");
     } else {
+      document.documentElement.classList.remove("dark");
+    } /*else {
       document.documentElement.removeAttribute("class"); // Remove specific theme class
       document.documentElement.setAttribute("data-theme", "auto"); // Set system default theme attribute
-    }
+    }*/
   }, [metaData.theme]);
   return (
     <div
