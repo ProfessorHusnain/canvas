@@ -2,6 +2,7 @@
 import { createContext, use, useEffect, useState } from "react";
 import { MetaData, Url } from "../types";
 import { isValidUrl } from "@/lib/utils";
+import Loader from "@/components/Loader";
 
 interface AppContextProps {
   url: Url;
@@ -13,7 +14,7 @@ interface AppContextProps {
 const QRAppContext = createContext<AppContextProps | undefined>(undefined);
 
 const AppWrapper = ({ children }: { children: React.ReactNode }) => {
-  const [url, setUrl] = useState<Url>({ value: "", isValid: undefined });
+  const [url, setUrl] = useState<Url>({ value: "", isValid: false });
   const [loading, setLoading] = useState<boolean>(false);
   const [metaData, setMetaData] = useState<MetaData>({
     vistor_id: "",
@@ -35,7 +36,7 @@ const AppWrapper = ({ children }: { children: React.ReactNode }) => {
       const vistor_id = window.localStorage.getItem("vistor_id");
       if (theme === "dark") {
         setMetaData((prev) => ({ ...prev, theme: "dark" }));
-      } else if (theme === "light"){
+      } else if (theme === "light") {
         setMetaData((prev) => ({ ...prev, theme: "light" }));
       }
       if (vistor_id) {
@@ -49,7 +50,11 @@ const AppWrapper = ({ children }: { children: React.ReactNode }) => {
     metaData();
   }, []);
   if (loading) {
-    return <h1>Loading...</h1>;
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <Loader size="large" />
+      </div>
+    );
   }
   return (
     <QRAppContext.Provider value={{ url, setUrl, metaData, setMetaData }}>

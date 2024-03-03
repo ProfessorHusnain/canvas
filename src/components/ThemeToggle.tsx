@@ -18,7 +18,7 @@ const ThemeToggle = () => {
   };
 
   useEffect(() => {
-    console.log(metaData.theme);
+  
     if (metaData.theme === "dark") {
       document.documentElement.classList.add("dark");
     } else {

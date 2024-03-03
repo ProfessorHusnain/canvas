@@ -8,7 +8,7 @@ type CommonField = {
 };
 
 export type Url = {
-  value: string | undefined;
+  value: string ;
   isValid: boolean | undefined;
 };
 export type MetaData = {
