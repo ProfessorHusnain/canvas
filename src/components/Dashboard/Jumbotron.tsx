@@ -3,7 +3,7 @@ import Button from "../Button";
 import { IoIosArrowForward } from "react-icons/io";
 const Jumbotron = () => {
   return (
-    <section className="bg-white dark:bg-gray-900 bg-[url('/hero-pattern.svg')] dark:bg-[url('/hero-pattern-dark.svg')]">
+    <section className="bg-white flex justify-between flex-col dark:bg-gray-900 bg-[url('/hero-pattern.svg')] dark:bg-[url('/hero-pattern-dark.svg')]">
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative">
         <a
           href="#"
@@ -13,7 +13,7 @@ const Jumbotron = () => {
             New
           </span>{" "}
           <span className="text-sm font-medium">
-            Jumbotron component was launched! See what s new
+            See what s new
           </span>
           <IoIosArrowForward className="w-2.5 h-2.5 ms-2 rtl:rotate-180" />
         </a>
@@ -27,6 +27,7 @@ const Jumbotron = () => {
         <div className="w-full max-w-md mx-auto">
           <Button />
         </div>
+        
       </div>
       <div className="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0"></div>
     </section>
