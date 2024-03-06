@@ -84,7 +84,7 @@ function Button() {
               Loading ...
             </div>
           ) : (
-            "Generate QR"
+            "Generate"
           )}
         </button>
         <span className="w-full flex">
